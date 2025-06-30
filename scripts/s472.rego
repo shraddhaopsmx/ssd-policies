@@ -3,15 +3,12 @@ package opsmx
 import future.keywords.in
 
 policy_name := input.metadata.policyName
-policy_category := replace(input.metadata.policyCategory, " ", "_")
 
-# TODO:
-scan_account := "TBD"
+scan_account := input.metadata.ssd_secret.modelscan.name
 
-model_file := input.metadata.model_file
+model_sha256= input.metadata.modelsha256
 
-# TODO:
-file_name := concat("", ["findings_", input.metadata.account, "_", model_file, "_", input.metadata.commit_hash, "_modelscan.json"])
+file_name := concat("", ["modelscan-sha256-", model_sha256, "-result.json"])
 
 complete_url := concat("", [input.metadata.toolchain_addr, "api/v1/scanResult?fileName=", file_name, "&scanOperation=modelscanScan"])
 download_url := concat("", ["tool-chain/api/v1/scanResult?fileName=", file_name, "&scanOperation=modelscanScan"])
