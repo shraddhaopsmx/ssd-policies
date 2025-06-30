@@ -4,7 +4,7 @@ metadata:
   severity: "Critical"
   action: "Alert"
   conditionValue: "CRITICAL"
-  status: true
+  status: false
   datasourceTool:
   - "graphql"
   tags:

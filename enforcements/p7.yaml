@@ -4,7 +4,7 @@ metadata:
   severity: "Low"
   action: "Alert"
   conditionValue: "LOW"
-  status: true
+  status: false
   datasourceTool:
   - "graphql"
   tags:

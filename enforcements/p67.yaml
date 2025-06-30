@@ -4,7 +4,7 @@ metadata:
   severity: "Critical"
   action: "Alert"
   conditionValue: "5.0"
-  status: true
+  status: false
   datasourceTool:
   - "sonarqube"
   tags:

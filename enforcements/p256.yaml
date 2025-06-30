@@ -4,7 +4,7 @@ metadata:
   severity: "Critical"
   action: "Alert"
   conditionValue: "0-30"
-  status: true
+  status: false
   datasourceTool:
   - "mitre-kubescape"
   tags:

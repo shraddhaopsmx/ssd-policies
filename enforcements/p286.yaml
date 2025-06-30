@@ -4,7 +4,7 @@ metadata:
   severity: "Medium"
   action: "Alert"
   conditionValue: "true"
-  status: true
+  status: false
   datasourceTool:
   - "gitlab"
   tags:

@@ -4,7 +4,7 @@ metadata:
   severity: "Low"
   action: "Alert"
   conditionValue: "4.0"
-  status: true
+  status: false
   datasourceTool:
   - "zap"
   tags:

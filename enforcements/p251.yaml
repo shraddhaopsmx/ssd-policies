@@ -4,7 +4,7 @@ metadata:
   severity: "High"
   action: "Alert"
   conditionValue: "30-50"
-  status: true
+  status: false
   datasourceTool:
   - "cis-kubescape"
   tags:

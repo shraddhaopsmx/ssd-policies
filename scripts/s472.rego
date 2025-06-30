@@ -6,7 +6,7 @@ policy_name := input.metadata.policyName
 
 scan_account := input.metadata.ssd_secret.modelscan.name
 
-model_sha256= input.metadata.modelsha256
+model_sha256= input.metadata.image_sha
 
 file_name := concat("", ["modelscan-sha256-", model_sha256, "-result.json"])
 
