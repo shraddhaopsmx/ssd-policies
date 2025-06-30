@@ -59,18 +59,20 @@ scan_targets := {
 	"asyncio": "*",
 }
 
-check_for_star(op) if {
+check_for_star(op){
 	op == "*"
 }
 
-check_for_specific_op(op, module) if {
+check_for_specific_op(op, module) {
 	not scan_targets[module] == "*"
 	op in scan_targets[module]
 }
 
-has_key(obj, key) if _ = obj[key]
+has_key(obj, key) {
+ obj[key]
+}
 
-deny[{"accountName": scan_account, "alertMsg": msg, "alertStatus": alertStatus, "alertTitle": title, "error": error, "exception": "", "fileApi": download_url, "suggestion": sugg}] if {
+deny[{"accountName": scan_account, "alertMsg": msg, "alertStatus": alertStatus, "alertTitle": title, "error": error, "exception": "", "fileApi": download_url, "suggestion": sugg}] {
 	total_issues > 0
 	some i in response.body.issues
 	has_key(scan_targets, i.module)
@@ -82,7 +84,7 @@ deny[{"accountName": scan_account, "alertMsg": msg, "alertStatus": alertStatus, 
 	alertStatus := "active"
 }
 
-deny[{"accountName": scan_account, "alertMsg": msg, "alertStatus": alertStatus, "alertTitle": title, "error": error, "exception": "", "fileApi": download_url, "suggestion": sugg}] if {
+deny[{"accountName": scan_account, "alertMsg": msg, "alertStatus": alertStatus, "alertTitle": title, "error": error, "exception": "", "fileApi": download_url, "suggestion": sugg}] {
 	total_issues > 0
 	some i in response.body.issues
 	has_key(scan_targets, i.module)

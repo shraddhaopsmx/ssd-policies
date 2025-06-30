@@ -21,7 +21,7 @@ request := {
 response := http.send(request)
 total_issues := response.body.summary.total_issues
 
-deny[{"accountName": scan_account, "alertMsg": msg, "alertStatus": alertStatus, "alertTitle": title, "error": error, "exception": "", "fileApi": download_url, "suggestion": sugg}] if {
+deny[{"accountName": scan_account, "alertMsg": msg, "alertStatus": alertStatus, "alertTitle": title, "error": error, "exception": "", "fileApi": download_url, "suggestion": sugg}] {
 	total_issues > 0
 	some i in response.body.issues
 	i.operator == "Lambda"

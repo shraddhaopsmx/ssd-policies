@@ -28,9 +28,11 @@ scan_targets := {
 	"aiohttp.client": "*",
 }
 
-has_key(obj, key) if _ = obj[key]
+has_key(obj, key){ 
+	obj[key]
+}
 
-deny[{"accountName": scan_account, "alertMsg": msg, "alertStatus": alertStatus, "alertTitle": title, "error": error, "exception": "", "fileApi": download_url, "suggestion": sugg}] if {
+deny[{"accountName": scan_account, "alertMsg": msg, "alertStatus": alertStatus, "alertTitle": title, "error": error, "exception": "", "fileApi": download_url, "suggestion": sugg}]{
 	total_issues > 0
 	some i in response.body.issues
 	has_key(scan_targets, i.module)
