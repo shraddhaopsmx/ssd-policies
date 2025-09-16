@@ -7,7 +7,7 @@ scan_account := input.metadata.ssd_secret.nbdefense.name
 model_sha256 := input.metadata.image_sha
 policy_severity := input.metadata.policySeverity
 
-file_name := concat("", ["sha256-", model_sha256, "-nbdefenseScanResult.json"])
+file_name := concat("", [model_sha256, "-nbdefenseScanResult.json"])
 complete_url := concat("", [input.metadata.toolchain_addr, "api/v1/scanResult?fileName=", file_name, "&scanOperation=nbdefenseScan"])
 download_url := concat("", ["tool-chain/api/v1/scanResult?fileName=", file_name, "&scanOperation=nbdefenseScan"])
 

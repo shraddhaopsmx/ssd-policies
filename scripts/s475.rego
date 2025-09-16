@@ -6,7 +6,7 @@ policy_name := input.metadata.policyName
 garak_sha256 := input.metadata.image_sha
 scan_account := input.metadata.ssd_secret.garak.name
 
-file_name := concat("", ["sha256-", garak_sha256, "-garakScanResult.json"])
+file_name := concat("", [garak_sha256, "-garakScanResult.json"])
 
 complete_url := concat("", [input.metadata.toolchain_addr, "api/v1/scanResult?fileName=", file_name, "&scanOperation=garakScan"])
 download_url := concat("", ["tool-chain/api/v1/scanResult?fileName=", file_name, "&scanOperation=garakScan"])

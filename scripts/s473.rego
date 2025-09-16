@@ -8,7 +8,7 @@ scan_account := input.metadata.ssd_secret.modelscan.name
 
 model_sha256= input.metadata.image_sha
 
-file_name := concat("", ["sha256-", model_sha256, "-modelscanScanResult.json"])
+file_name := concat("", [model_sha256, "-modelscanScanResult.json"])
 
 complete_url := concat("", [input.metadata.toolchain_addr, "api/v1/scanResult?fileName=", file_name, "&scanOperation=modelscan"])
 download_url := concat("", ["tool-chain/api/v1/scanResult?fileName=", file_name, "&scanOperation=modelscan"])
